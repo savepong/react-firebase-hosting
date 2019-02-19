@@ -1,69 +1,35 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React on Firebase Hosting
 
-## Available Scripts
+เริ่มจาก ติดตั้ง
 
-In the project directory, you can run:
+### `npm install -g firebase-tools`
 
-### `npm start`
+จากนั้นก็ทำการ login และ init firebase project
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### `firebase login`
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+ก็จะมี Popup ขึ้นมา เพื่อให้เราทลงชื่อเข้าใช้ด้วย Email และเข้าถึง Firebase Console ได้ ก็กด Allow (หรืออนุญาต) และหน้า Terminal หลังจากเรากดลงชื่อเข้าใช้และ Allow แล้ว ก็จะมี ข้อความบอกใน Terminal ว่า Success
 
-### `npm test`
+### `firebase init`
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ให้เราเลื่อนไปที่ Hosting และกด spacebar เพื่อเลือก (สังเกตปุ่มกลมๆขาวๆ) จากนั้นกด Enter
 
-### `npm run build`
+### `? What do you want to use as your public directory?`
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Note: พิมพ์เป็น build เพราะว่า `yarn build` มันจะ build static ไปที่โฟลเดอร์ build (default กรณีไม่เปลี่ยนคือ public)**
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+### `? Configure as a single-page app (rewrite all urls to /index.html)? (y/N)`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+พิมพ์ n เพื่อไม่ต้องให้มันเขียนทับไฟล์ที่มีอยู่แล้ว
 
 ### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+### `firebase deploy`
 
-### `npm run build` fails to minify
+ในกรณีที่เราไม่ได้เลือก default project จะเกิด error ขึ้น คือ
+Error: No project active. Run with --project <projectId> or define an alias by
+ให้เราทำการ ระบุ project ด้วย โดยการใช้คำสั่ง
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-# React on Firebase Hosting
+### `firebase use --add`
+
+ตอนนี้เว็บผมก็ Host บน Firebase เรียบร้อยแล้ว โดยใช้ไฟล์ static จากโฟลเดอร์ build นั่นเอง
