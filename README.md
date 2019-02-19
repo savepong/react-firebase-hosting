@@ -33,3 +33,7 @@ Error: No project active. Run with --project <projectId> or define an alias by
 ### `firebase use --add`
 
 ตอนนี้เว็บผมก็ Host บน Firebase เรียบร้อยแล้ว โดยใช้ไฟล์ static จากโฟลเดอร์ build นั่นเอง
+
+### `yarn build`
+
+### `firebase deploy`
